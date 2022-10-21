@@ -1,3 +1,5 @@
+# this program interfaces with the twitter api to fetch user bookmarks
+
 import json
 import glob
 import functools
