@@ -3,22 +3,22 @@ import glob
 import functools
 
 all_bookmarks = []
-md_file = open("bookmarks.md", "w+")  # saving in markdown file, if no file exists  using '+' creates one
+md_file = open("bookmarks.md", "w+")  # save in markdown file, if no file exists  using '+' creates one
 
-files = [file for file in glob.glob("JSONBookmarks/*")]  # using glob to read all files from the folder
+files = [file for file in glob.glob("Bookmarks/*")]  # use glob to read all files from the folder
 for file_name in files:
     print(file_name)
     with open(file_name) as bk:
-        data = json.load(bk)  # reads json data
+        data = json.load(bk)
     all_bookmarks.append(data)
 
 
-# Function to construct bookmarked tweet url
+# construct bookmarked tweet url
 def constructUrl(tweet_id, username):
     return "https://twitter.com/" + username + "/status/" + tweet_id
 
 
-# Function to format the text to write in file
+# format the text to write in file
 def formatText(text):
     text = text.replace("\n-", " ")
     text = text.replace("\n", " ")
