@@ -44,7 +44,7 @@ username = input("Enter username: ")
 tweet_id = input("Enter tweet ID: ")
 
 
-for data in all_bookmarks:
+for data in bookmarks:
     instructions_list = deep_get(data, "data.bookmark_timeline.timeline.instructions")
     if instructions_list == None: continue
     tweet_entries_list = deep_get(instructions_list[0], "entries")
